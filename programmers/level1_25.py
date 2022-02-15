@@ -1,7 +1,7 @@
 def binary(arr, n):
     tmp = []
     for i in arr:
-        tmp.append(list(bin(i)))
+        tmp.append(list(map(int, list(bin(i)[2:]))))
     for j in tmp:
         if(len(j)<n):
             while(len(j)!=n):
@@ -11,6 +11,6 @@ def binary(arr, n):
 def solution(n, arr1, arr2):
     arr1 = binary(arr1, n)
     arr2 = binary(arr2, n)
-    tmp = [[i+j for i,j in zip(A,B)] for A,B in zip(arr1,arr2)]
-    tmp=[[" " if i==0 else "#" for i in A]for A in tmp]
-    return ["".join(A) for A in tmp]
+    print(arr2)
+    tmp = [['#' if (i or j) else ' ' for i,j in zip(A,B)] for A,B in zip(arr1,arr2)]
+    return ["".join(a) for a in tmp]
