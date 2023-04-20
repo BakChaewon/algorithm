@@ -1,0 +1,1 @@
+- i for i in range(2,n) if n%i==1 혹은 [i for i in range(2,n) if n%i==1] 와 같은 코드는 generator를 반환함. 그렇기 때문에 이를 retrun할 경우 문제 틀림
